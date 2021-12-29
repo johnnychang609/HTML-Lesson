@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="web 開發"/>
+        <meta name="author" content="Johnny"/>
+        <title>web 開發</title>
+        <link rel="icon" type="image/x-icon" href="assets/johnny.ico" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            function openCity(cityName) {
+              var i;
+              var x = document.getElementsByClassName("city");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              document.getElementById(cityName).style.display = "block";  
+            }
+
+            function getsrc(src){
+                $('#myModal').css('display','block');
+                $('#targetimg').attr("src",src);
+            }
+
+            function closeM(){
+                $('#myModal').css('display','none');
+            }           
+
+            </script>        
+    </head>
+    <body>
+        <nav class="navtop" id="navbar">            
+            <a href="index.html"><img id="icon" title="回首頁" alt="破圖了" src="assets/img/titlejohnny.png"></a>
+            <a id="rtxt" href="contant.html">自由創作</a>
+            <a id="rtxt" href="about.html">關於我</a>
+            <a id="rtxt" href="news.html">最新消息</a>
+            <a id="rtxt" href="index.html">台灣美景</a>            
+        </nav>
+
+        <div class="tabbar">
+            <a href="javascript: void(0)" onclick="openCity('taipei')">台北</a>
+            <a href="javascript: void(0)" onclick="openCity('taichung')">台中</a>
+            <a href="javascript: void(0)" onclick="openCity('kaohsiung')">高雄</a>            
+        </div>
+          
+        <div id="taipei" class="city">
+            <h4 align="center">台北</h4>
+            <hr>
+            <p align="center">
+                <img onclick="getsrc('https://img.ltn.com.tw/Upload/news/600/2015/03/03/15.jpg')"
+                style="cursor: pointer;"                
+                src="https://img.ltn.com.tw/Upload/news/600/2015/03/03/15.jpg"
+                title="台北美景1"
+                alt="台北美景1"> 
+                <img onclick="getsrc('http://3.bp.blogspot.com/-QIONR_lpih8/T9k-G1tmRjI/AAAAAAAATVs/mluvVap0r2I/s1600/%E8%B1%AA%E9%9B%A8%E5%B8%B6%E4%BE%86%E7%9A%84%E5%8F%B0%E5%8C%97%E7%BE%8E%E6%99%AF%EF%BC%8C%E4%BD%86%E4%B8%8D%E8%A6%81%E5%86%8D%E4%B8%8B%E8%B1%AA%E9%9B%A8%E5%95%A6%EF%BC%81.jpg')"
+                style="cursor: pointer;"
+                src="http://3.bp.blogspot.com/-QIONR_lpih8/T9k-G1tmRjI/AAAAAAAATVs/mluvVap0r2I/s1600/%E8%B1%AA%E9%9B%A8%E5%B8%B6%E4%BE%86%E7%9A%84%E5%8F%B0%E5%8C%97%E7%BE%8E%E6%99%AF%EF%BC%8C%E4%BD%86%E4%B8%8D%E8%A6%81%E5%86%8D%E4%B8%8B%E8%B1%AA%E9%9B%A8%E5%95%A6%EF%BC%81.jpg"
+                title="台北美景2"
+                alt="台北美景2">  
+                <img onclick="getsrc('https://img.bobowin.blog/uploads/20180105143332_3.jpg')"
+                style="cursor: pointer;"
+                src="https://img.bobowin.blog/uploads/20180105143332_3.jpg"
+                title="台北美景3"
+                alt="台北美景3">                                               
+            </p>
+            <p align="center">
+                <ol>
+                    <li>
+                        台北國父紀念館位於台北市中心，為紀念孫中山先生百年誕辰而興建的。全區包括紀念堂、翠湖、中山公園、中山碑林和中山公園廣場。紀念館共三層樓，開館初期，主要展出國父革命史跡相關文物，並提供部分展演活動。時至今日，已成為台北市民不可或缺的重要文化社教中心，許多文藝表演或頒獎典禮，比如金馬獎，均會選擇在此舉行，是島內最大型的國家級表演場地。
+                    </li>
+                    <li>
+                        台北市又有落羽松秘境被發現，位在故宮旁的原住民文化主題公園，每當12月中到1月底變紅的落羽松倒映在湖水上，這樣的美好像雲山水般，讓人想拿起相機拍下來與好朋友分享，推薦大家假日到這邊走走，很悠閒很輕鬆，帶孩子一同前來也很適合。
+                    </li>
+                    <li>
+                        台北市又有落羽松秘境被發現，位在故宮旁的原住民文化主題公園，每當12月中到1月底變紅的落羽松倒映在湖水上，這樣的美好像雲山水般，讓人想拿起相機拍下來與好朋友分享，推薦大家假日到這邊走走，很悠閒很輕鬆，帶孩子一同前來也很適合。
+                    </li>
+                </ol>
+            </p>
+            
+            
+        </div>
+          
+        <div id="taichung" class="city" style="display:none">
+            <h4 align="center">台中</h4>
+            <hr>
+            <p align="center">
+                <img onclick="getsrc('https://www.eatatevn.com/wp-content/uploads/2019/10/20190401002133_1.jpg')"
+                style="cursor: pointer;"
+                src="https://www.eatatevn.com/wp-content/uploads/2019/10/20190401002133_1.jpg"
+                title="台中美景1"
+                alt="台中美景1"> 
+                <img onclick="getsrc('https://farm3.staticflickr.com/2822/9061403271_57d87a5dee_b.jpg')"
+                style="cursor: pointer;"
+                src="https://farm3.staticflickr.com/2822/9061403271_57d87a5dee_b.jpg"
+                title="台中美景2"
+                alt="台中美景2">  
+                <img onclick="getsrc('https://www.funtime.com.tw/blog/wp-content/uploads/2016/09/224-1024x682.jpg')"
+                style="cursor: pointer;"
+                src="https://www.funtime.com.tw/blog/wp-content/uploads/2016/09/224-1024x682.jpg"
+                title="台中美景3"
+                alt="台中美景3">                                               
+            </p>
+            <p align="center">
+                <ol>
+                    <li>
+                        台北國父紀念館位於台北市中心，為紀念孫中山先生百年誕辰而興建的。全區包括紀念堂、翠湖、中山公園、中山碑林和中山公園廣場。紀念館共三層樓，開館初期，主要展出國父革命史跡相關文物，並提供部分展演活動。時至今日，已成為台北市民不可或缺的重要文化社教中心，許多文藝表演或頒獎典禮，比如金馬獎，均會選擇在此舉行，是島內最大型的國家級表演場地。
+                    </li>
+                    <li>
+                        台北市又有落羽松秘境被發現，位在故宮旁的原住民文化主題公園，每當12月中到1月底變紅的落羽松倒映在湖水上，這樣的美好像雲山水般，讓人想拿起相機拍下來與好朋友分享，推薦大家假日到這邊走走，很悠閒很輕鬆，帶孩子一同前來也很適合。
+                    </li>
+                    <li>
+                        台北市又有落羽松秘境被發現，位在故宮旁的原住民文化主題公園，每當12月中到1月底變紅的落羽松倒映在湖水上，這樣的美好像雲山水般，讓人想拿起相機拍下來與好朋友分享，推薦大家假日到這邊走走，很悠閒很輕鬆，帶孩子一同前來也很適合。
+                    </li>
+                </ol>
+            </p>
+        </div>
+          
+        <div id="kaohsiung" class="city" style="display:none">
+            <h4 align="center">高雄</h4>
+            <hr>
+            <p align="center">
+                <img 
+                onclick="getsrc('https://img.travel98.com/xl/P_49817_ff4a91fa535d6359e914a2ac2d048e1e_o.jpg')"
+                src="https://img.travel98.com/xl/P_49817_ff4a91fa535d6359e914a2ac2d048e1e_o.jpg"
+                style="cursor: pointer;"
+                title="高雄美景1"
+                alt="高雄美景1"> 
+                <img 
+                onclick="getsrc('https://cdn2.ettoday.net/images/2242/d2242846.jpg')"
+                src="https://cdn2.ettoday.net/images/2242/d2242846.jpg"
+                style="cursor: pointer;"
+                title="高雄美景2"
+                alt="高雄美景2">  
+                <img 
+                onclick="getsrc('https://i1.wp.com/blog.kkday.com/wp-content/uploads/batch_shutterstock_1827451199.jpg?resize=900%2C600&quality=80&strip=all&ssl=1')"
+                src="https://i1.wp.com/blog.kkday.com/wp-content/uploads/batch_shutterstock_1827451199.jpg?resize=900%2C600&quality=80&strip=all&ssl=1"
+                style="cursor: pointer;"
+                title="高雄美景3"
+                alt="高雄美景3">                                               
+            </p>
+            <p align="center">
+                <ol>
+                    <li>
+                        台北國父紀念館位於台北市中心，為紀念孫中山先生百年誕辰而興建的。全區包括紀念堂、翠湖、中山公園、中山碑林和中山公園廣場。紀念館共三層樓，開館初期，主要展出國父革命史跡相關文物，並提供部分展演活動。時至今日，已成為台北市民不可或缺的重要文化社教中心，許多文藝表演或頒獎典禮，比如金馬獎，均會選擇在此舉行，是島內最大型的國家級表演場地。
+                    </li>
+                    <li>
+                        台北市又有落羽松秘境被發現，位在故宮旁的原住民文化主題公園，每當12月中到1月底變紅的落羽松倒映在湖水上，這樣的美好像雲山水般，讓人想拿起相機拍下來與好朋友分享，推薦大家假日到這邊走走，很悠閒很輕鬆，帶孩子一同前來也很適合。
+                    </li>
+                    <li>
+                        台北市又有落羽松秘境被發現，位在故宮旁的原住民文化主題公園，每當12月中到1月底變紅的落羽松倒映在湖水上，這樣的美好像雲山水般，讓人想拿起相機拍下來與好朋友分享，推薦大家假日到這邊走走，很悠閒很輕鬆，帶孩子一同前來也很適合。
+                    </li>
+                </ol>
+            </p>
+        </div> 
+        
+        <div id="myModal" class="modal" style="padding-top: 0%;border-radius: 35px;">
+            <div class="modal-content" style="border-radius: 35px;">
+              <span class="close" onclick="closeM()"  style="cursor: pointer;">&times;</span>
+              <p align="center">
+                <img id="targetimg"       
+                src=""
+                title="顯示圖檔"
+                alt="無資料"> 
+              </p>
+            </div>
+          
+          </div>        
+    </body>
+</html>

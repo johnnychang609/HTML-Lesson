@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="web 開發"/>
+        <meta name="author" content="Johnny"/>
+        <title>web 開發</title>
+        <link rel="icon" type="image/x-icon" href="assets/johnny.ico" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(()=>{
+                $("#getnews").click(()=>{
+                    $('#statics').css('display','none'); 
+                    $('#dynamic').css('display','block');
+                    $('#myModal').css('display','block');
+                    $.ajax({
+                        url: "https://randomuser.me/api/",
+                        type: "GET",
+                        dataType: "json",
+                        success: (Jdata)=> {
+                            const myObj = Jdata;
+                            $("#pimg").attr("src",myObj.results[0].picture.large);
+                            $('#names').text(myObj.results[0].name.last); 
+                            $('#titles').text(myObj.results[0].name.title);
+                            $('#myModal').css('display','none');
+                        },
+                        
+                        error: ()=> {
+                            console.log("ERROR!!!");
+                        }
+                      });
+                });
+
+                $('#getstatics').click(()=>{
+                    $('#statics').css('display','block'); 
+                    $('#dynamic').css('display','none'); 
+                })
+              });
+        </script>        
+    </head>
+    <body>
+        <nav class="navtop" id="navbar">            
+            <a href="index.html"><img id="icon" title="回首頁" alt="破圖了" src="assets/img/titlejohnny.png"></a>
+            <a id="rtxt" href="contant.html">自由創作</a>
+            <a id="rtxt" href="about.html">關於我</a>
+            <a id="rtxt" href="news.html">最新消息</a>
+            <a id="rtxt" href="index.html">台灣美景</a>
+        </nav>
+        <div class="tabbar">
+            <div class="tabbar">
+                <a id="getstatics" href="javascript: void(0)">關於我(靜態)</a>     
+                <a id="getnews"  href="javascript: void(0)">關於我(動態 髓機更新)</a>                 
+            </div>                                
+        </div> 
+       
+            <p align="center">
+                <div id="statics" style="display:none">
+                    <div class="card">
+                        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ezepcfau8aixpxn-1-1590658908.jpg?crop=1xw:1xh;center,top&resize=480:*" alt="Avatar" style="width:100%">
+                        <div class="container">
+                        <h4><b>Johnny chang</b></h4> 
+                        <p>軟體開發主管</p> 
+                        </div>
+                    </div>
+                </div>
+                <div id="dynamic" class="font" style="display:none"> 
+                    <div class="card">
+                        <img id="pimg" src="" alt="Avatar" style="width:100%">
+                        <div class="container">
+                        <h4><b><span id="names"></span></b></h4> 
+                        <p><span id="titles"></span></p> 
+                        </div>
+                    </div>                     
+                </div>          
+            </p>
+                <div id="myModal" class="modal">
+                        <div class="loader"></div>         
+              </div>
+    </body>
+</html>
