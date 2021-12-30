@@ -8,6 +8,43 @@
         <title>web 開發</title>
         <link rel="icon" type="image/x-icon" href="assets/johnny.ico" />
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(()=>{
+                $("#getnews").click(()=>{
+                    $('#statics').css('display','none'); 
+                    $('#dynamic').css('display','block');
+                    $('#myModal').css('display','block');
+                    $.ajax({
+                        url: "https://homeworkx.herokuapp.com/api/v1/order/getcars",
+                        type: "GET",
+                        dataType: "json",
+                        success: (Jdata)=> {
+                            const myObj = Jdata;
+                            $("#dynamic").empty();
+                            for (var i in myObj) {                                 
+                                let tmp ="<p align=\"center\"><img id=\"pimg\" src='"+myObj[i].img+"' alt=\"Avatar\" style=\"width:70%\">"
+                                    tmp +="<div class=\"container\">"
+                                    tmp +="<h3 align=\"center\"><b><a href='"+myObj[i].url+"' target=\"_blank\"><span id=\"names\">"+myObj[i].title+"</span></a></b></h3>"                                       
+                                    tmp +="</div></p>"
+
+                                $("#dynamic").append(tmp);                                
+                              }
+                              $('#myModal').css('display','none');
+                        },
+                        
+                        error: ()=> {
+                            console.log("ERROR!!!");
+                        }
+                      });
+                });
+
+                $('#getstatics').click(()=>{
+                    $('#statics').css('display','block'); 
+                    $('#dynamic').css('display','none'); 
+                })
+              });
+        </script>        
     </head>
     <body>
         <nav class="navtop" id="navbar">            
@@ -18,7 +55,21 @@
             <a id="rtxt" href="index.html">台灣美景</a>            
         </nav>
         <div class="tabbar">
-            <a href="contant.html">內容</a>                      
-        </div>         
+            <a id="getnews"  href="javascript: void(0)">取得最新汽車資訊</a>                      
+        </div>
+        <div id="taipei" class="city">
+            <h4 align="center">各式汽車資訊</h4>
+            <hr>
+            <p align="center">
+                <div id="dynamic" class="font" style="display:none"> 
+                    <div class="card">
+
+                    </div>                     
+                </div>
+            </p>
+        </div>  
+        <div id="myModal" class="modal">
+            <div class="loader"></div>           
+        </div>                        
     </body>
 </html>
